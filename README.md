@@ -1,5 +1,6 @@
 Project Specifications:
-![image](https://github.com/PandaBunBuns/SOLIS_Deep-Dive/assets/87511092/87ed9747-1309-457a-b333-f57a0f091f31)
+![image](https://github.com/PandaBunBuns/SOLIS_Deep-Dive/assets/87511092/1bf97d95-62ca-4c44-b171-9c3361c7951f)
+
 
 1. Comparative execution time as well as analysis of the performance of different kernels (how many times faster, why is it faster, overheads in calling the kernel, etc.)
 
