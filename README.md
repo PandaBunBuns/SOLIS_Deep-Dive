@@ -6,12 +6,15 @@ Project Specifications:
 2. Screenshot of the program output with correctness check (C)
 
    2.1 2^20
+   /n
    ![image](https://github.com/PandaBunBuns/SOLIS_Deep-Dive/assets/87511092/8244ff9d-f37b-44e8-9eb8-f30b8b5ad464)
 
    2.2 2^24
+   /n
    ![image](https://github.com/PandaBunBuns/SOLIS_Deep-Dive/assets/87511092/c63e98ed-23fd-49b0-8c7e-74a17bd785c0)
 
    2.3 2^27
+   /n
    ![image](https://github.com/PandaBunBuns/SOLIS_Deep-Dive/assets/87511092/5fad47ed-daaf-4c1c-920d-865595a1caaf)
 
 4. screenshot of the program output including correctness check (x86-64)
