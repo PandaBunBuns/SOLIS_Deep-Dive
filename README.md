@@ -8,15 +8,15 @@ Project Specifications:
 
    2.1 2^20
    
-   ![image](https://github.com/PandaBunBuns/SOLIS_Deep-Dive/assets/87511092/8244ff9d-f37b-44e8-9eb8-f30b8b5ad464)
-
+   ![image](https://github.com/PandaBunBuns/SOLIS_Deep-Dive/assets/87511092/87d320ef-4c68-4b5a-bca3-8f5cfbefd6f9)
+   
    2.2 2^24
    
-   ![image](https://github.com/PandaBunBuns/SOLIS_Deep-Dive/assets/87511092/c63e98ed-23fd-49b0-8c7e-74a17bd785c0)
+   ![image](https://github.com/PandaBunBuns/SOLIS_Deep-Dive/assets/87511092/81f27019-d174-40f5-9265-b8162afbdbbb)
 
    2.3 2^27
    
-   ![image](https://github.com/PandaBunBuns/SOLIS_Deep-Dive/assets/87511092/5fad47ed-daaf-4c1c-920d-865595a1caaf)
+   ![image](https://github.com/PandaBunBuns/SOLIS_Deep-Dive/assets/87511092/9504ca83-9cb1-4b5a-a520-c9d16b75064f)
 
 4. screenshot of the program output including correctness check (x86-64)
 
