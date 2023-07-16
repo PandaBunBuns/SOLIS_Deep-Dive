@@ -117,13 +117,13 @@ unsigned int error(int X_SIZE, int* Y, int* Y_ref) {
         Y_SIMD = (int*)malloc(ARRAY_BYTES_Y);
 
         // flush-in cache
-        process_SIMD_ASM(X_SIZE, Y_SIMD, X);
+        process_SIMD_ASM(X_SIZE-6, Y_SIMD, X);
 
         // time here
         total = 0;
         for (int i = 0; i < 30; i++) {
             start = clock();
-            process_SIMD_ASM(X_SIZE, Y_SIMD, X);
+            process_SIMD_ASM(X_SIZE-6, Y_SIMD, X);
             end = clock();
             total += ((double)(end - start)) * 1e6 / CLOCKS_PER_SEC; // microseconds
         }
