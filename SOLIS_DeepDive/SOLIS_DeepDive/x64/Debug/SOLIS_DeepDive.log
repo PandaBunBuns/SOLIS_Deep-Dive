@@ -1,0 +1,4 @@
+﻿  SOLIS_DeepDive.c
+C:\Users\Dani Solis\Desktop\VS\SOLIS_DeepDive\SOLIS_DeepDive\SOLIS_DeepDive.c(54,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Dani Solis\Desktop\VS\SOLIS_DeepDive\SOLIS_DeepDive\SOLIS_DeepDive.c(77,27): warning C4018: '<': signed/unsigned mismatch
+  SOLIS_DeepDive.vcxproj -> C:\Users\Dani Solis\Desktop\VS\SOLIS_DeepDive\x64\Debug\SOLIS_DeepDive.exe

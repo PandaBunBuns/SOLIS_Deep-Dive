@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-process_ASM",
+      "appliesTo": "SOLIS_DeepDive/process_ASM.asm",
+      "type": "launch"
+    }
+  ]
+}
