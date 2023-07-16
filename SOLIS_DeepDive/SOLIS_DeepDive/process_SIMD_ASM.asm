@@ -9,26 +9,26 @@ global process_SIMD_ASM
 process_SIMD_ASM:
     shr ECX, 2
     
-    xor EBX, EBX
+    xor RBX, RBX
     
     sum:
         ; init data
         vxorps YMM1, YMM1
         
         ; sum operation
-        vmovdqu YMM1, [R8D]
-        vaddpd YMM1, YMM1, [R8D+8]
-        vaddpd YMM1, YMM1, [R8D+16]
-        vaddpd YMM1, YMM1, [R8D+24]
-        vaddpd YMM1, YMM1, [R8D+32]
-        vaddpd YMM1, YMM1, [R8D+40]
-        vaddpd YMM1, YMM1, [R8D+48]
+        vmovdqu YMM1, [R8]
+        vaddpd YMM1, YMM1, [R8+8]
+        vaddpd YMM1, YMM1, [R8+16]
+        vaddpd YMM1, YMM1, [R8+24]
+        vaddpd YMM1, YMM1, [R8+32]
+        vaddpd YMM1, YMM1, [R8+40]
+        vaddpd YMM1, YMM1, [R8+48]
         
-        vmovdqu [EDX], YMM1
+        vmovdqu [RDX], YMM1
         
-        ADD R8D, 32
+        ADD R8, 32
         
-        ADD EDX, 32
+        ADD RDX, 32
         
     LOOP sum
 

@@ -16,7 +16,7 @@ void process(int n, int* h_Y, int* h_X) {
 
 extern void process_ASM(int n, int* d_Y, int* d_X);
 
-//extern void process_SIMD_ASM(int n, int* d_Y, int* d_X);
+extern void process_SIMD_ASM(int n, int* d_Y, int* d_X);
 
 unsigned int error(int X_SIZE, int* Y, int* Y_ref) {
     unsigned int err_count = 0;
@@ -88,19 +88,19 @@ unsigned int error(int X_SIZE, int* Y, int* Y_ref) {
         Y_ASM = (int*)malloc(ARRAY_BYTES_Y);
 
         // flush-in cache
-        process_ASM(X_SIZE, Y_ASM, X);
+        process_ASM(X_SIZE - 6, Y_ASM, X);
 
         // time here
         total = 0;
         for (int i = 0; i < 30; i++) {
             start = clock();
-            process_ASM(X_SIZE, Y_ASM, X);
+            process_ASM(X_SIZE - 6, Y_ASM, X);
             end = clock();
             total += ((double)(end - start)) * 1e6 / CLOCKS_PER_SEC; // microseconds
         }
         double ave_time_ASM = total / 30.0;
         printf("ASM function: %lfus\n", ave_time_ASM);
-        printf("Y Vector: %d\t%d\t%d\t%d\t%d\n", Y[0], Y[1], Y[2], Y[3], Y[4]);
+        printf("Y Vector: %d\t%d\t%d\t%d\t%d\n", Y_ASM[0], Y_ASM[1], Y_ASM[2], Y_ASM[3], Y_ASM[4]);
 
         // check for errors
         unsigned int err_count_asm = error(X_SIZE, Y_ASM, Y);
@@ -112,7 +112,7 @@ unsigned int error(int X_SIZE, int* Y, int* Y_ref) {
 
 
 
-        /* x86 SIMD using YMM register 
+        /* x86 SIMD using YMM register */
         int* Y_SIMD;
         Y_SIMD = (int*)malloc(ARRAY_BYTES);
 
@@ -120,7 +120,7 @@ unsigned int error(int X_SIZE, int* Y, int* Y_ref) {
         process_SIMD_ASM(X_SIZE, Y_SIMD, X);
 
         // time here
-        double total = 0;
+        total = 0;
         for (int i = 0; i < 30; i++) {
             start = clock();
             process_SIMD_ASM(X_SIZE, Y_SIMD, X);
@@ -139,7 +139,7 @@ unsigned int error(int X_SIZE, int* Y, int* Y_ref) {
         // free memory
         free(X);
         free(Y);
-        free(Y_ASM);*/
+        free(Y_ASM);
 
         return 0;
     }
