@@ -7,28 +7,25 @@ default rel
 global process_SIMD_ASM
 
 process_SIMD_ASM:
-    shr ECX, 2
-    
-    xor RBX, RBX
+    shr rcx, 3 
     
     sum:
         ; init data
-        vxorps YMM1, YMM1
+        vxorps ymm1, ymm1
         
         ; sum operation
-        vmovdqu YMM1, [R8]
-        vaddpd YMM1, YMM1, [R8+8]
-        vaddpd YMM1, YMM1, [R8+16]
-        vaddpd YMM1, YMM1, [R8+24]
-        vaddpd YMM1, YMM1, [R8+32]
-        vaddpd YMM1, YMM1, [R8+40]
-        vaddpd YMM1, YMM1, [R8+48]
+        vmovdqu ymm1, [r8]
+        vaddpd ymm1, ymm1, [r8+8]
+        vaddpd ymm1, ymm1, [r8+16]
+        vaddpd ymm1, ymm1, [r8+24]
+        vaddpd ymm1, ymm1, [r8+32]
+        vaddpd ymm1, ymm1, [r8+40]
+        vaddpd ymm1, ymm1, [r8+48]
         
-        vmovdqu [RDX], YMM1
+        vmovdqu [rdx], ymm1
         
-        ADD R8, 32
-        
-        ADD RDX, 32
+        add r8, 32
+        add rdx, 32
         
     LOOP sum
 

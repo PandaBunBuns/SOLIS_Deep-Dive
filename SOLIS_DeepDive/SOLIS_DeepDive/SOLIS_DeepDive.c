@@ -114,7 +114,7 @@ unsigned int error(int X_SIZE, int* Y, int* Y_ref) {
 
         /* x86 SIMD using YMM register */
         int* Y_SIMD;
-        Y_SIMD = (int*)malloc(ARRAY_BYTES);
+        Y_SIMD = (int*)malloc(ARRAY_BYTES_Y);
 
         // flush-in cache
         process_SIMD_ASM(X_SIZE, Y_SIMD, X);
@@ -129,7 +129,7 @@ unsigned int error(int X_SIZE, int* Y, int* Y_ref) {
         }
         double ave_time_SIMD = total / 30.0;
         printf("SIMD ASM function: %lfus\n", ave_time_SIMD);
-        printf("Y Vector: %d\t%d\t%d\t%d\t%d\n", Y[0], Y[1], Y[2], Y[3], Y[4]);
+        printf("Y Vector: %d\t%d\t%d\t%d\t%d\n", Y_SIMD[0], Y_SIMD[1], Y_SIMD[2], Y_SIMD[3], Y_SIMD[4]);
 
         // check for errors
         unsigned int err_count_SIMD = error(X_SIZE, Y_SIMD, Y);
@@ -139,7 +139,7 @@ unsigned int error(int X_SIZE, int* Y, int* Y_ref) {
         // free memory
         free(X);
         free(Y);
-        free(Y_ASM);
+        free(Y_SIMD);
 
         return 0;
     }
