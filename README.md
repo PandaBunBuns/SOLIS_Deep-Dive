@@ -21,5 +21,3 @@ Project Specifications:
 4. screenshot of the program output including correctness check (x86-64)
 
 5. screenshot of the program output including correctness check (SIMD YMM register)
-
-6. screenshot of the program output including correctness check (CUDA, optional)
